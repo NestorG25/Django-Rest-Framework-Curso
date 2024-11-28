@@ -33,7 +33,8 @@ DEBUG = 'RENDER' not in os.environ
 import os
 
 # Agregar hosts permitidos desde la variable de entorno
-ALLOWED_HOSTS = os.getenv('ALLOWED_HOSTS', '127.0.0.1,localhost').split(',')
+ALLOWED_HOSTS = ['127.0.0.1', 'localhost', 'https://drfsimplecrud-test-ikq8.onrender.com']
+
 #EL HOST DE RENDER
 RENDER_EXTERNAL_HOSTNAME = os.environ.get('RENDER_EXTERNAL_HOSTNAME')
 if RENDER_EXTERNAL_HOSTNAME:
