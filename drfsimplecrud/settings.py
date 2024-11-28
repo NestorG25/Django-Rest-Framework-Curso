@@ -30,7 +30,10 @@ SECRET_KEY = os.environ.get('SECRET_KEY', default='your secret key')
 #DESARROLLO: TRUE / PRODUCCION :FALSE
 DEBUG = 'RENDER' not in os.environ
 
-ALLOWED_HOSTS = ['']
+import os
+
+# Agregar hosts permitidos desde la variable de entorno
+ALLOWED_HOSTS = os.getenv('ALLOWED_HOSTS', '127.0.0.1,localhost').split(',')
 #EL HOST DE RENDER
 RENDER_EXTERNAL_HOSTNAME = os.environ.get('RENDER_EXTERNAL_HOSTNAME')
 if RENDER_EXTERNAL_HOSTNAME:
